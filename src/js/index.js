@@ -2,34 +2,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types"
+import SimpleCounter from "./component/Simplecounter.jsx";
 
 // include your styles into the webpack bundle
 import "../styles/index.css";
 
 //import your own components
 import Home from "./component/home.jsx";
-
-function SimpleCounter(props){
-    return(
-<div className="bigCounter">
-			<div className="calendar">
-			<i className="far fa-clock"></i>
-			</div>
-			
-			<div className="four">{props.digitFour % 10}</div>
-			<div className="three">{props.digitThree % 10}</div>
-			<div className="two">{props.digitTwo % 10}</div>
-			<div className="one">{props.digitOne % 10}</div>
-		</div>
-    );
-}
-
-SimpleCounter.propTypes ={
-    digitFour: PropTypes.number,
-    digitThree: PropTypes.number,
-    digitTwo: PropTypes.number,
-    digitOne: PropTypes.number,
-};
 
 //render your react application
 let counter = 0
@@ -44,3 +23,25 @@ ReactDOM.render(
 <SimpleCounter digitOne={one} digitTwo={two} digitThree={three} digitFour={four} />, document.querySelector("#app"));
 }
 ,1000);
+
+
+// function SimpleCounter(props){
+//     return(
+// <div className="bigCounter">
+// 			<div className="calendar">
+// 			<i className="far fa-clock"></i>
+// 			</div>
+			
+// 			<div className="four">{props.digitFour % 10}</div>
+// 			<div className="three">{props.digitThree % 10}</div>
+// 			<div className="two">{props.digitTwo % 10}</div>
+// 			<div className="one">{props.digitOne % 10}</div>
+// 		</div>
+//     );
+// }
+// SimpleCounter.propTypes ={
+//     digitFour: PropTypes.number,
+//     digitThree: PropTypes.number,
+//     digitTwo: PropTypes.number,
+//     digitOne: PropTypes.number,
+// };
